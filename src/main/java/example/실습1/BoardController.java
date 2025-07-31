@@ -52,6 +52,7 @@ public class BoardController {
         System.out.println("BoardController.method5");
         BoardDto boardDto = new BoardDto();
         return boardDto;
+
     }
 
 
