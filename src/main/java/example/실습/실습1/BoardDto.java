@@ -1,4 +1,4 @@
-package example.실습1;
+package example.실습.실습1;
 
 public class BoardDto {
     private int bno;

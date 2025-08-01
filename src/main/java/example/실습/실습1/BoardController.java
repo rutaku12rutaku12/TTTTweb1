@@ -1,4 +1,4 @@
-package example.실습1;
+package example.실습.실습1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
