@@ -15,9 +15,9 @@ public class BoardController {
     // (1) 등록 기능 구현
     @PostMapping("/board")
     public boolean boardWrite(@RequestBody BoardDto boardDto){
-        // 3. 객체화 된 dto를 dao에게 전달후 결과를 받는다.
+        // 1. 객체화 된 dto를 dao에게 전달후 결과를 받는다.
         boolean result = boardDao.boardWrite( boardDto );
-        // 4. 결과를 view에게 리턴한다.
+        // 2. 결과를 view에게 리턴한다.
         return result;
     }
 
