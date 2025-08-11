@@ -13,13 +13,11 @@
     
     <jsp:include page="/board/header.jsp"></jsp:include>
     <div>
-        <h3> 게시물 상세 페이지 </h3>
-        작성자 : <div class="bwriterBox"></div>
-        내용: <div class="bcontentBox"></div>
-        <button type="button" onclick="boardUpdateView()"> 수정 </button>
-        <button type="button" onclick="boardDelete()"> 삭제 </button>
+        <h3> 게시물 수정 페이지 </h3>
+        내용 : <textarea class="bcontent"></textarea> <br/>
+        <button type="button" onclick="boardUpdate()"> 수정 </button>
     </div>
 
-    <script src="/board/view.js"></script>
+    <script src="/board/update.js"></script>
 </body>
 </html>

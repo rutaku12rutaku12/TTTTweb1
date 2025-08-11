@@ -7,19 +7,17 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
 </head>
 <body>
     
     <jsp:include page="/board/header.jsp"></jsp:include>
     <div>
-        <h3> 게시물 상세 페이지 </h3>
-        작성자 : <div class="bwriterBox"></div>
-        내용: <div class="bcontentBox"></div>
-        <button type="button" onclick="boardUpdateView()"> 수정 </button>
-        <button type="button" onclick="boardDelete()"> 삭제 </button>
+        <h3> 게시물 쓰기 페이지 </h3>
+        내용 : <textarea class="bcontent"></textarea>
+        작성자 : <input class="bwriter"/> <br/>
+        <button type="button" onclick="boardWrite()"> 등록 </button>
     </div>
 
-    <script src="/board/view.js"></script>
+    <script src="/board/write.js"></script>
 </body>
 </html>

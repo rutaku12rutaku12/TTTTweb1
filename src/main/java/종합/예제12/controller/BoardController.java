@@ -40,7 +40,7 @@ public class BoardController {
     } // m end
 
     // [3] 개별조회
-    @GetMapping("find") // localhost:8080/board/find?bno=1
+    @GetMapping("/find") // localhost:8080/board/find?bno=1
     public BoardDto boardFind( @RequestParam int bno ){
         System.out.println("BoardController.boardFind");
         System.out.println("bno = " + bno);

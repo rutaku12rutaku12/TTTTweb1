@@ -17,7 +17,7 @@ const boardPrint = async ()=>{
         const board = data[i]; // i번째 dto(객체/게시물)꺼낸다.
         html += `<tr>
                     <td> ${ board.bno }</td>
-                    <td> <a href="/board/view.jsp?bno${ board.bno }">
+                    <td> <a href="/board/view.jsp?bno=${ board.bno }">
                             ${ board.bcontent}
                          </a>    
                     </td>
@@ -28,4 +28,4 @@ const boardPrint = async ()=>{
     boardTbody.innerHTML = html;
 } // func end
 
-boardPrint(); // first 1 exe
+boardPrint(); // 최초 1번 실행
