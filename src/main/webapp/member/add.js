@@ -12,6 +12,7 @@ const memberAdd = async () => {console.log('memberAdd exe');
     const city = document.querySelector('.city').value;
     // 2. 입력받은 데이터를 객체화 한다.
     const obj = {'custname' : custname , 'phone' : phone , 'address' : address , 'joindate' : joindate , 'grade' : grade , 'city' : city };
+    console.log(obj);
     // 3. fetch 옵션
     const option = {
         method : "POST", // HTTP method 보내는 방법
@@ -22,6 +23,7 @@ const memberAdd = async () => {console.log('memberAdd exe');
     const response = await fetch("/member", option);
     // 5. 응답자료 타입변환
     const data = await response.json();
+    console.log(data);
     // 6. 응답자료 확인
     if( data == true ){
         alert('회원등록 성공');

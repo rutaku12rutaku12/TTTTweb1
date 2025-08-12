@@ -10,6 +10,19 @@
 </head>
 <body>
         <jsp:include page="/member/header.jsp"></jsp:include>
+        <div>
+            <h3> 홈쇼핑 회원 정보 수정 </h3>
+            회원번호 : <div class="custnoBox"></div>
+            회원성명 : <div class="custnameBox"></div>
+            회원전화 : <div class="phoneBox"></div>
+            회원주소 : <div class="addressBox"></div>
+            가입일자 : <div class="joindateBox"></div>
+            고객등급[A:VIP,B:일반,C:직원] : <div class="gradeBox"></div>
+            도시코드 : <div class="cityBox"></div>
+            <button type="button" onclick="memberUpdate()"> 수정 </button>
+            <button type="button" onclick="memberPrint()"> 조회 </button>
+        </div>
     
+        <script src="/member/update.js"></script>
 </body>
 </html>

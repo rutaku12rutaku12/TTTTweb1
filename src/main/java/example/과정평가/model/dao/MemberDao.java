@@ -42,7 +42,11 @@ public class MemberDao extends Dao{
         List<MemberDto> list = new ArrayList<>();
         try{
             // 1. SQL 작성
-            String sql = "select * from member";
+            String sql = "select custno , custname , phone, address , joindate , case member.grade\n" +
+                    "when 'A' then 'VIP'\n" +
+                    "when 'B' then '일반'\n" +
+                    "when 'C' then '직원'\n" +
+                    "end as grade  , city from member;";
             // 2. SQL 기재
             PreparedStatement ps = conn.prepareStatement(sql);
             // 3. SQL 매개변수 대입

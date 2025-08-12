@@ -24,6 +24,6 @@
             <button type="button" onclick="memberPrint()"> 조회 </button>
         </div>
     
-        <script scr="/member/add.js"></script>
+        <script src="/member/add.js"></script>
 </body>
 </html>

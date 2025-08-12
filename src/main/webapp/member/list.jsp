@@ -10,6 +10,20 @@
 </head>
 <body>
         <jsp:include page="/member/header.jsp"></jsp:include>
+        <div>
+            <h3> 화면목록조회/수정</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>회원번호</th><th>회원성명</th><th>전화번호</th><th>주소</th><th>가입일자</th><th>고객등급</th><th>거주지역</th>
+                    </tr>
+                </thead>
+                <tbody id="memberTbody">
+
+                </tbody>
+            </table>
+        </div>
     
+        <script src="/member/list.js"></script>
 </body>
 </html>
