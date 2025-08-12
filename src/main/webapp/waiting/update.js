@@ -9,8 +9,8 @@ const waitingFind = async () => {console.log("waitingFind exe");
     const response = await fetch(`/waiting/find?wno=${wno}`);
     const data = await response.json();
     // 3. 현재 대기 정보 수정하기 전 내용물 출력
-    document.querySelector('.phone').innerHTML = data.phone;
-    document.querySelector('.count').innerHTML = data.count;
+    document.querySelector('.phone').value = data.phone;
+    document.querySelector('.count').value = data.count;
 }
 waitingFind(); // JS 실행시 1번 실행 버튼없으므로
 

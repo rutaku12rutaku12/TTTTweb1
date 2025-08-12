@@ -18,10 +18,9 @@ const waitingPrint = async () =>{ console.log('waitingPrint exe');
                 <td>${waiting.wno}</td>
                 <td>
                     <a href="/waiting/view.jsp?wno=${waiting.wno}">
-                    ${waiting.phone} ${waiting.count} 
-                    </a>
-                    ${waiting.wdate}
-                </td>
+                    ${waiting.phone} </a></td>
+                    <td><a href="/waiting/view.jsp?wno=${waiting.wno}">${waiting.count}</a></td>
+                    <td>${waiting.wdate}</td>
                 </tr>`
     }
     // 5. 출력
