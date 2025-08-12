@@ -15,11 +15,12 @@ https://docs.google.com/spreadsheets/d/1PitSxFz77ctf8sk8WF87JHpiYpnkR3PGHZdbBHzE
 
         3] MVC2 3Tire   : view <--> controller <--> service <--> model
             -> Spring MVC 에서 사용되는 패턴 , controller 의 역할 (제어 와 로직) 분리
-            -> 장점 : 관점지향프로그래밍 특화 / 역할분담 , 단점 : 파일 수 관리/증가
+            -> 장점 : 관점지향프로그래밍 특화 / 역할분담 / 유지보수 , 단점 : 파일 수 관리/증가
 
     4. 구역/레이어 종류
         1] VIEW : JSP/타임리프/머스테치/REACT ( HTML , CSS , JS )
             -> 역할 : 프론트엔드(화면구현)
+            -> Spring 프로젝트에서는 resources 폴더에서 찾는다. *JSP는 webapp 폴더 에서 찾는다*
 
         2] CONTROLLER : @RestController @Controller
             -> 역할 : [주] HTTP 통신(요청/응답) , 매개변수/반환 타입 관리 변환 , VIEW 와 SERVICE 중계
@@ -32,3 +33,20 @@ https://docs.google.com/spreadsheets/d/1PitSxFz77ctf8sk8WF87JHpiYpnkR3PGHZdbBHzE
             -> 역할 : 저장소( 실질적인 저장소/엔티티 를 조작코드 ) , DAO , ** JPA , myBatis **
 
 * 유효성검사(유지보수단계에서도 계속) 위치 : JS , CONTROLLER , SERVICE , SQL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
