@@ -7,9 +7,13 @@ const memberFind = async () => { console.log('memberFind exe');
         const url = new URLSearchParams( location.search);
         // (2) 웹주소에서 쿼리스트링 값 가져오기
         const custno = url.get('custno');
+        console.log('custno:', custno);
+
     // 2. 클릭한 cusstno를 fetch로 통신하기 , 백틱`이용한 쿼리스트링 사용
     const response = await fetch(`/member/find?custno=${custno}`);
+    console.log(response);
     const data = await response.json();
+    console.log(data);
     // 3. 어디에
     // const custnoBox = document.querySelector('.custnoBox');
     const custnameBox = document.querySelector('.custnameBox');
@@ -22,16 +26,18 @@ const memberFind = async () => { console.log('memberFind exe');
     // const custno = data.custno;
     const custname = data.custname;
     const phone = data.phone;
-    const adress = data.adress;
+    const address = data.adress;
     const joindate = data.joindate;
     const grade = data.grade;
     const city = data.city;
     // 5. 출력
     custnameBox.innerHTML = custname;
     phoneBox.innerHTML = phone;
-    addressBox.innerHTML = adress;
+    addressBox.innerHTML = address;
     joindateBox.innerHTML = joindate;
     gradeBox.innerHTML = grade;
     cityBox.innerHTML = city;
 
 } // func end
+
+memberFind(); // 최초 1회 실행
