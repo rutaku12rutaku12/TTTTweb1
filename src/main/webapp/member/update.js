@@ -47,11 +47,11 @@ const memberUpdate = async () => { console.log('memberUpdate exe');
     // 1. 현재 수정할 회원번호 가져오기
     const custno = new URLSearchParams( location.search ).get('custno');
     // 2. 수정할 입력받은 값 가져오기
-    // const custno = data.custno; 여기 수정하려면 어떻게하지? 
+    // const custno = data.custno; 여기 수정하려면 어떻게하지?
     const custname = document.querySelector('.custname')
     const phone = data.phone;
     const address = data.address;
     const joindate = data.joindate;
     const grade = data.grade;
-    const city = data.city; 
+    const city = data.city;
 }
