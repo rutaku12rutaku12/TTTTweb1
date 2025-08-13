@@ -51,7 +51,7 @@ public class MemberDao extends Dao{ // JDBC 연동 상속받기
             PreparedStatement ps = conn.prepareStatement(sql);
             // 3. SQL 매개변수 대입
             ps.setString(1,memberDto.getMid());
-            ps.setString(2, memberDto.getMpwd());
+            ps.setString(2,memberDto.getMpwd());
             // 4. SQL 실행
             ResultSet rs = ps.executeQuery();
             // 5. SQL 결과에 따른 로직/리턴/확인

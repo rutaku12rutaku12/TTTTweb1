@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/member")
+@RequestMapping("/money")
 public class MoneyController {
     @Autowired private MoneyService moneyService;
 
     // [1] 전체조회
-    @GetMapping("/price") // localhost:8080/money
+    @GetMapping("") // localhost:8080/money
     public List<MoneyDto> moneyPrint(){
         System.out.println("MoneyController.moneyPrint");
         List<MoneyDto> result = moneyService.moneyPrint();

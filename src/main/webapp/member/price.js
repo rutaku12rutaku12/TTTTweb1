@@ -6,7 +6,7 @@ console.log('price.js exe');
 const moneyPrint = async () => {console.log('moneyPrint exe');
 
     // 1. fetch option 중 GET은 생략가능
-    const response = await fetch("/member");
+    const response = await fetch("/money");
     // 2. 응답자료 타입변환
     const data = await response.json();
     // 3. 어디에

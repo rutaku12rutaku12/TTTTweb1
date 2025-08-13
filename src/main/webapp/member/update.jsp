@@ -12,13 +12,13 @@
         <jsp:include page="/member/header.jsp"></jsp:include>
         <div>
             <h3> 홈쇼핑 회원 정보 수정 </h3>
-            회원번호 : <div class="custno"></div>
-            회원성명 : <div class="custname"></div>
-            회원전화 : <div class="phone"></div>
-            회원주소 : <div class="address"></div>
-            가입일자 : <div class="joindate"></div>
-            고객등급[A:VIP,B:일반,C:직원] : <div class="grade"></div>
-            도시코드 : <div class="city"></div>
+            회원번호 : <input class="custno"/><br/>
+            회원성명 : <input class="custname"/><br/>
+            회원전화 : <input class="phone"/><br/>
+            회원주소 : <input class="address"/><br/>
+            가입일자 : <input class="joindate"/><br/>
+            고객등급[A:VIP,B:일반,C:직원] : <input class="grade"/><br/>
+            도시코드 : <input class="city"/><br/>
             <button type="button" onclick="memberUpdate()"> 수정 </button>
             <button type="button" onclick="memberPrint()"> 조회 </button>
         </div>

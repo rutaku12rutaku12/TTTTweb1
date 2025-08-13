@@ -30,7 +30,7 @@ public class MemberController {
     } // m end
 
     // [3] 개별조회
-    @GetMapping("/find") // localhost:8080/member/find?custno=1
+    @GetMapping("/update") // localhost:8080/member/update?custno=1
     public MemberDto memberFind(@RequestParam int custno ){
         System.out.println("MemberController.memberFind");
         System.out.println("custno = " + custno);

@@ -1,47 +1,52 @@
 
 console.log('update.js open');
 
-// const memberFind = async () => { console.log('memberFind exe');
-//     // 1. URL 경로상의 쿼리스트링 가져오기 클릭한 custno 가져오기
-//         // (1) 경로상 웹주소 가져오기
-//         const url = new URLSearchParams( location.search);
-//         // (2) 웹주소에서 쿼리스트링 값 가져오기
-//         const custno = url.get('custno');
-//         console.log('custno:', custno);
+// [1] 수정 화면 조회
 
-//     // 2. 클릭한 cusstno를 fetch로 통신하기 , 백틱`이용한 쿼리스트링 사용
-//     const response = await fetch(`/member/find?custno=${custno}`);
-//     console.log(response);
-//     const data = await response.json();
-//     console.log(data);
-//     // 3. 어디에
-//     const custnoBox = document.querySelector('.custnoBox');
-//     const custnameBox = document.querySelector('.custnameBox');
-//     const phoneBox = document.querySelector('.phoneBox');
-//     const addressBox = document.querySelector('.addressBox');
-//     const joindateBox = document.querySelector('.joindateBox');
-//     const gradeBox = document.querySelector('.gradeBox');
-//     const cityBox = document.querySelector('.cityBox');
-//     // 4. 무엇을
-//     // const custno = data.custno; 없어도되네 ㅇㅅㅇ?;
-//     const custname = data.custname;
-//     const phone = data.phone;
-//     const address = data.address;
-//     const joindate = data.joindate;
-//     const grade = data.grade;
-//     const city = data.city;
-//     // 5. 출력
-//     custnoBox.innerHTML = custno;
-//     custnameBox.innerHTML = custname;
-//     phoneBox.innerHTML = phone;
-//     addressBox.innerHTML = address;
-//     joindateBox.innerHTML = joindate;
-//     gradeBox.innerHTML = grade;
-//     cityBox.innerHTML = city;
+const memberFind = async () => { console.log('memberFind exe');
+    // 1. URL 경로상의 쿼리스트링 가져오기 클릭한 custno 가져오기
+        // (1) 경로상 웹주소 가져오기
+        const url = new URLSearchParams( location.search);
+        // (2) 웹주소에서 쿼리스트링 값 가져오기
+        const custno = url.get('custno');
+        console.log('custno:', custno);
 
-// } // func end
+    // 2. 클릭한 cusstno를 fetch로 통신하기 , 백틱`이용한 쿼리스트링 사용
+    const response = await fetch(`/member/update?custno=${custno}`);
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    // 3.현재 게시물의 수정하기 전 내용 출력
+    
+    // 3. 어디에
+    const custnoBox = document.querySelector('.custno');
+    // const custnameBox = document.querySelector('.custname');
+    const phoneBox = document.querySelector('.phone');
+    const addressBox = document.querySelector('.address');
+    const joindateBox = document.querySelector('.joindate');
+    const gradeBox = document.querySelector('.grade');
+    const cityBox = document.querySelector('.city');
+    // 4. 무엇을
+    // const custno = data.custno; 없어도되네 ㅇㅅㅇ?;
+    // const custname = data.custname;
+    const phone = data.phone;
+    const address = data.address;
+    const joindate = data.joindate;
+    const grade = data.grade;
+    const city = data.city;
+    // 5. 출력
+    custnoBox.value = custno;
+    // custnameBox.innerHTML = custname;
+    phoneBox.value = phone;
+    addressBox.value = address;
+    joindateBox.value = joindate;
+    gradeBox.value = grade;
+    cityBox.value = city;
+ 
+    document.querySelector('.custname').value = data.custname;
 
-// memberFind(); // 최초 1회 실행
+} // func end
+memberFind(); // 최초 1회 실행
 
 const memberUpdate = async () => { console.log('memberUpdate exe');
     // 1. 현재 수정할 회원번호 가져오기
@@ -73,3 +78,9 @@ const memberUpdate = async () => { console.log('memberUpdate exe');
         alert('수정 실패')
     }
 } // func end
+
+// 조회 이동 함수
+function memberPrint(){console.log('memberPrint')
+    
+    location.href =`/member/list.jsp`;
+}

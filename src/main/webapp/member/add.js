@@ -10,6 +10,29 @@ const memberAdd = async () => {console.log('memberAdd exe');
     const joindate = document.querySelector('.joindate').value;
     const grade = document.querySelector('.grade').value;
     const city = document.querySelector('.city').value;
+
+    // 1-1 유효성검사
+    if( custname == "" ){
+        alert('회원성명이 입력되지 않았습니다.')
+        return;
+    }
+    if( phone == "" ){
+        alert('회원전화가 입력되지 않았습니다.')
+        return;
+    }
+    if( address == "" ){
+        alert('회원주소가 입력되지 않았습니다.')
+        return;
+    }
+    if( grade == "" ){
+        alert('고객등급이 입력되지 않았습니다.')
+        return;
+    }
+    if( city == "" ){
+        alert('도시코드가 입력되지 않았습니다.')
+        return;
+    }
+    
     // 2. 입력받은 데이터를 객체화 한다.
     const obj = {'custname' : custname , 'phone' : phone , 'address' : address , 'joindate' : joindate , 'grade' : grade , 'city' : city };
     console.log(obj);
@@ -32,3 +55,9 @@ const memberAdd = async () => {console.log('memberAdd exe');
         alert('회원등록 실패')
     }
 } // fucn end
+
+// 조회 이동 함수
+function memberPrint(){console.log('memberPrint')
+    
+    location.href =`/member/list.jsp`;
+}
