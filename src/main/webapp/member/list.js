@@ -15,7 +15,7 @@ const memberPrint = async () => { console.log('memberPrint exe');
     for( let i = 0; i<data.length; i++){
         const member = data[i]; // i번째 dto 꺼내기
         html += `<tr>
-                <td><a href="/member/update.jsp?cutno=${member.custno}">
+                <td><a href="/member/update.jsp?custno=${member.custno}">
                 ${member.custno}</a></td>
                 <td>${member.custname}</td>
                 <td>${member.phone}</td>

@@ -7,11 +7,15 @@ const memberFind = async () => { console.log('memberFind exe');
         const url = new URLSearchParams( location.search);
         // (2) 웹주소에서 쿼리스트링 값 가져오기
         const custno = url.get('custno');
+        console.log('custno:', custno);
+
     // 2. 클릭한 cusstno를 fetch로 통신하기 , 백틱`이용한 쿼리스트링 사용
     const response = await fetch(`/member/find?custno=${custno}`);
+    console.log(response);
     const data = await response.json();
+    console.log(data);
     // 3. 어디에
-    // const custnoBox = document.querySelector('.custnoBox');
+    const custnoBox = document.querySelector('.custnoBox');
     const custnameBox = document.querySelector('.custnameBox');
     const phoneBox = document.querySelector('.phoneBox');
     const addressBox = document.querySelector('.addressBox');
@@ -19,19 +23,35 @@ const memberFind = async () => { console.log('memberFind exe');
     const gradeBox = document.querySelector('.gradeBox');
     const cityBox = document.querySelector('.cityBox');
     // 4. 무엇을
-    // const custno = data.custno;
+    // const custno = data.custno; 없어도되네 ㅇㅅㅇ?;
     const custname = data.custname;
     const phone = data.phone;
-    const adress = data.adress;
+    const address = data.address;
     const joindate = data.joindate;
     const grade = data.grade;
     const city = data.city;
     // 5. 출력
+    custnoBox.innerHTML = custno;
     custnameBox.innerHTML = custname;
     phoneBox.innerHTML = phone;
-    addressBox.innerHTML = adress;
+    addressBox.innerHTML = address;
     joindateBox.innerHTML = joindate;
     gradeBox.innerHTML = grade;
     cityBox.innerHTML = city;
 
 } // func end
+
+memberFind(); // 최초 1회 실행
+
+const memberUpdate = async () => { console.log('memberUpdate exe');
+    // 1. 현재 수정할 회원번호 가져오기
+    const custno = new URLSearchParams( location.search ).get('custno');
+    // 2. 수정할 입력받은 값 가져오기
+    // const custno = data.custno; 여기 수정하려면 어떻게하지? 
+    const custname = document.querySelector('.custname')
+    const phone = data.phone;
+    const address = data.address;
+    const joindate = data.joindate;
+    const grade = data.grade;
+    const city = data.city; 
+}
