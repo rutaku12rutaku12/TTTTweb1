@@ -29,7 +29,7 @@ const waitingUpdate = async () => { console.log("waitingUpdate exe");
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(obj)
     }
-    // 5.fetch 실행
+    // 5. fetch 실행
     const response = await fetch("/waiting",option);
     const data = await response.json();
     // 6. fetch 결과

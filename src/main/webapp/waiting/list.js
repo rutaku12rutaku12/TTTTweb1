@@ -9,7 +9,7 @@ const waitingPrint = async () =>{ console.log('waitingPrint exe');
     // 2. 응답자료 타입변환
     const data = await response.json();
     // 3. 어디에
-    const waitingTbody = document.querySelector('#waitingTbody')
+    const waitingTbody = document.querySelector('#waitingTbody');
     // 4. 무엇을 
     let html = ''; // 초기값 빈칸
     for( let i = 0; i<data.length; i++ ){
