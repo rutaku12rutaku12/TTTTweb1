@@ -54,6 +54,14 @@ public class MemberService {
         boolean result = memberDao.delete( mno , oldpwd);
         return result;
     }
+    // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
+    public String findId( Map<String , String> map){
+        String result = memberDao.findId( map );
+        return result;
+    }
+
+    // [10] 비밀번호 찾기
+
 }// class end
 
 

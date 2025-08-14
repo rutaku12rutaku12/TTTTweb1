@@ -17,7 +17,7 @@
         패스워드 : <input type="password" class="pwdInput" id="pwdInput" placeholder="패스워드 입력" /> <br/>
         <button type="button" onclick="login()"> 로그인 </button> <br/>
         <a href="/member/signup.jsp"> 회원가입하기 </a>
-        <a href="/memeber/find.jsp"> 아이디/비밀번호찾기 </a>
+        <a href="/member/find.jsp"> 아이디/비밀번호찾기 </a>
     </div>
 
     <script src="/js/member/login.js"></script>

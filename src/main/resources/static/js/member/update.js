@@ -7,10 +7,11 @@ const oninfo = async() =>{
         const option = { method : "GET"} 
         const response = await fetch( "/member/info" , option ); console.log(response);
         const data = await response.json(); console.log(data);
-    const mno = document.querySelector('.mno').innerHTML = data.mno;
-    const mid = document.querySelector('.mid').innerHTML = data.mid;
-    const mname = document.querySelector('.mname').value = data.mname;
-    const mphone = document.querySelector('.mphone').value = data.mphone;
+        
+        const mno = document.querySelector('.mno').innerHTML = data.mno;
+        const mid = document.querySelector('.mid').innerHTML = data.mid;
+        const mname = document.querySelector('.mname').value = data.mname;
+        const mphone = document.querySelector('.mphone').value = data.mphone;
     }catch (error){console.log(error);}
 } 
 oninfo();

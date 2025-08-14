@@ -6,18 +6,18 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='/css/member/pwdupdate.css'>
+    <link rel='stylesheet' href='/css/member/find.css'>
 </head>
 <body>
     <jsp:include page="/header.jsp"></jsp:include>
     
     <div id="container">      
-        <h3> 비밀번호 수정 페이지 </h3>
-        <div>기존 패스워드 : <input type="password" class = "oldpwd"/> </div>
-        <div>새로운 패스워드 : <input type="password" class = "newpwd"/> </div>   
-        <button type="button" onclick="onPwdUpdate()"> 비밀번호 수정 </button>
+        <h3> 아이디 찾기 페이지 </h3>
+        <div> 이름 : <input type="text" class = "mname"/> </div>
+        <div> 연락처 : <input type="text" class = "mphone"/> </div>   
+        <button type="button" onclick="findId()"> 아이디 찾기  </button>
     </div>
 
-    <script src="/js/member/pwdupdate.js"></script>
+    <script src="/js/member/find.js"></script>
 </body>
 </html>

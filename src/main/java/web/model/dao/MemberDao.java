@@ -161,7 +161,27 @@ public class MemberDao extends Dao{ // JDBC 연동 상속받기
             // 5. SQL 결과에 따른 로직/리턴/확인
         }catch (Exception e){System.out.println(e);}
         return false;
+    } // m end
+
+    // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
+    public String findId( Map<String, String> map){
+        try{
+            // 1. SQL 작성
+            String sql = "select mid from member where mname = ? and mphone = ?";
+            // 2. SQL 기재
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3. SQL 매개변수 대입
+            ps.setString(1,map.get("mname"));
+            ps.setString(2,map.get("mphone"));
+            // 4. SQL 실행
+            ResultSet rs = ps.executeQuery();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            if( rs. next() ) return rs.getString("mid");
+        }catch (Exception e){System.out.println(e);}
+        return null; // 못찾으면 null
     }
+    // [10] 비밀번호 찾기
+
 } // class end
 
 
