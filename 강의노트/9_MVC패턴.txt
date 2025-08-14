@@ -4,6 +4,9 @@ https://docs.google.com/spreadsheets/d/1PitSxFz77ctf8sk8WF87JHpiYpnkR3PGHZdbBHzE
 로그인 로그아웃 +세션 과정
 https://docs.google.com/spreadsheets/d/1lBRVdhaUGJJwcGAm2CFG28FwttTXsXgH7vTNLnP0lqc/edit?gid=0#gid=0
 
+프론트 vscode
+https://docs.google.com/spreadsheets/d/1Eb4v0vsMNuNwbjUJ3vl4jrRq3tm_zb3vS2f4NCcdjRs/edit?gid=1062220342#gid=1062220342
+
 [ MVC 패턴 ]
     1. 정의 : 소프으웨어 공학에서 사용되는 디자인 패턴 중 하나
     2. 목적 : 프로그램을 깔끔하고 효율적으로 만들기 위한 설계 방법

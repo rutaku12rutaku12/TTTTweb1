@@ -19,3 +19,12 @@
     1. **JAVA는 키워드 오류 바로 발생**
     2. **JS는 키워드 오류 바로 발생:CONSOLE 확인**
 
+6) 프론트엔드에서 경로 설정 , / 슬래시 주의
+    1. jsp/css/js : webapp 또는 static 이하 경로부터 시작
+        http://localhost:8080 (절대경로) vs / (상대경로)
+        [o] <jsp:include page="/header.jsp"></jsp:include>
+        [x] <jsp:include page="header.jsp"></jsp:include>    경로 앞에 / 넣어야함 
+    2. fetch : controller 경로 확인
+        [o] fetch( "httP://localhost.8080/member/login" )
+        [o] fetch( "/member/login" )
+        [x] fetch( "member/login" ) 
