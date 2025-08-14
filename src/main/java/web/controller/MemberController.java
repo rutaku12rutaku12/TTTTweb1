@@ -110,6 +110,7 @@ public class MemberController {
         int loginMno = (int)obj;
         // 4.
         boolean result =memberService.updatePassword( loginMno , map );
+        session.removeAttribute("loginMno"); // 로그아웃
         return result;
     }
 
@@ -121,6 +122,7 @@ public class MemberController {
         // 2.
         int loginMno = (int)session.getAttribute("loginMno");
         // 3.
+        session.removeAttribute("loginMno"); // 로그아웃
         return  memberService.delete( loginMno , oldpwd );
     }
 } // class end

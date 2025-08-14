@@ -1,7 +1,7 @@
 예제12 과정
 https://docs.google.com/spreadsheets/d/1PitSxFz77ctf8sk8WF87JHpiYpnkR3PGHZdbBHzEZBE/edit?gid=0#gid=0
 
-로그인 로그아웃 과정
+로그인 로그아웃 +세션 과정
 https://docs.google.com/spreadsheets/d/1lBRVdhaUGJJwcGAm2CFG28FwttTXsXgH7vTNLnP0lqc/edit?gid=0#gid=0
 
 [ MVC 패턴 ]
