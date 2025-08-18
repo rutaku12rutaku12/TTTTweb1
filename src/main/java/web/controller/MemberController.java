@@ -133,10 +133,9 @@ public class MemberController {
         return mid;
     }
 
-    // [10] 비밀번호 찾기
+//    // [10] 비밀번호 찾기
 //    @PutMapping("/find")
-//    public boolean findPassword(){
-//
+//    public String findPassword(){
 //    }
 
 } // class end
