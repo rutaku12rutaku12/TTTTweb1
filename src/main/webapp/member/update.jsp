@@ -17,7 +17,7 @@
         <div>아이디 :  <span class = "mid"> </span> </div>   
         <div>이름 : <input class = "mname"/> </div>
         <div>연락처 : <input class = "mphone"/> </div>
-        <button type="button" onclick="onUpdate()"> 수정 </button>
+        <button type="button" onclick="onUpdate()"> 정보 수정 </button>
     </div>
 
     <script src="/js/member/update.js"></script>

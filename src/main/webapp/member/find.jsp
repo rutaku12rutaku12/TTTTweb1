@@ -12,10 +12,15 @@
     <jsp:include page="/header.jsp"></jsp:include>
     
     <div id="container">      
-        <h3> 아이디 찾기 페이지 </h3>
+        <h3> 아이디 찾기 </h3>
         <div> 이름 : <input type="text" class = "mname"/> </div>
-        <div> 연락처 : <input type="text" class = "mphone"/> </div>   
+        <div> 연락처 : <input type="text" class = "mphone"/> </div> <br/>
         <button type="button" onclick="findId()"> 아이디 찾기  </button>
+        <br/>
+        <h3> 비밀번호 찾기 </h3>
+        <div> 아이디 : <input type="text" class = "mid"/></div>
+        <div> 연락처 : <input type="text" class = "mphone"/> </div> <br/>
+        <button type="button" onclick="findPwd()"> 비밀번호 찾기  </button>
     </div>
 
     <script src="/js/member/find.js"></script>

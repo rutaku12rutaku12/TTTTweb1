@@ -2,9 +2,11 @@ package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import web.model.dao.MemberDao;
 import web.model.dto.MemberDto;
 
+import java.util.List;
 import java.util.Map;
 
 @Service // 스프링 컨테이너(메모리) 빈(객체) 등록
@@ -55,12 +57,17 @@ public class MemberService {
         return result;
     }
     // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
-    public String findId( Map<String , String> map){
-        String result = memberDao.findId( map );
+    public String findId( List<Map<String, String>> list){
+        String result = memberDao.findId( list );
         return result;
     }
 
     // [10] 비밀번호 찾기
+    public String findPwd( Map < String ,String > map ){
+        String result = memberDao.findPwd( map );
+        return result;
+    }
+
 
 }// class end
 

@@ -6,7 +6,9 @@ import web.model.dto.MemberDto;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Repository // 스프링 컨테이너에 빈 등록
 public class MemberDao extends Dao{ // JDBC 연동 상속받기
@@ -164,15 +166,15 @@ public class MemberDao extends Dao{ // JDBC 연동 상속받기
     } // m end
 
     // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
-    public String findId( Map<String, String> map){
+    public String findId( List<Map<String, String>> list){
         try{
             // 1. SQL 작성
             String sql = "select mid from member where mname = ? and mphone = ?";
             // 2. SQL 기재
             PreparedStatement ps = conn.prepareStatement(sql);
             // 3. SQL 매개변수 대입
-            ps.setString(1,map.get("mname"));
-            ps.setString(2,map.get("mphone"));
+            ps.setString(1,list.get(0).get("mname"));
+            ps.setString(2,list.get(1).get("mphone"));
             // 4. SQL 실행
             ResultSet rs = ps.executeQuery();
             // 5. SQL 결과에 따른 로직/리턴/확인
@@ -181,8 +183,38 @@ public class MemberDao extends Dao{ // JDBC 연동 상속받기
         return null; // 못찾으면 null
     }
     // [10] 비밀번호 찾기
+    public String findPwd( Map < String , String > map ){
+        try{// 1. SQL 작성
+            String sql = "update member set mpwd = ? where mid = ? and mphone = ? ";
+            // 2. SQL 기재
+            PreparedStatement ps = conn.prepareStatement(sql);
+                // * 난수 생성
+                Random random = new Random();
+                int rand = random.nextInt(900000)+100000; // 100000~999999 숫자
+                String rand1 = String.valueOf(rand); // 숫자를 문자로 강제타입변환
+            // 3. SQL 매개변수 대입
+            ps.setString(1, rand1);
+            ps.setString(2,map.get("mid"));
+            ps.setString(3,map.get("mphone"));
+            // 4. SQL 실행
+            int count = ps.executeUpdate();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            if( count == 1 ) return rand1;
+        }catch (Exception e){System.out.println(e);}
+        return null;
+    }
 
 } // class end
+
+
+
+
+
+
+
+
+
+
 
 
 
