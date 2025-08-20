@@ -64,6 +64,7 @@ HTTP : Hyper Text Transfer Protocol
                 1) 데이터위주 폼 : application/x-www-form-urlencoded ,
                 2) 첨부파일 폼 : multipart/form-data
             - 스프링 매핑 : @ModelAttribute
+
     9. HTTP 응답 코드
         1) 정의 : 서버가 클라이언트의 요청에 대한 결과를 나타내는 코드
         2) 종류
