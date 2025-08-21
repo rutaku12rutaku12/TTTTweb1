@@ -128,19 +128,31 @@ public class MemberController {
         return  memberService.delete( loginMno , oldpwd );
     }
 
-    // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
-    @PostMapping("/find")
-    public String findId(@RequestBody List<Map<String, String>> list){
-        String mid = memberService.findId( list );
+//    // [9] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
+//    @PostMapping("/find")
+//    public String findId(@RequestBody List<Map<String, String>> list){
+//        String mid = memberService.findId( list );
+//
+//        return mid;
+//    }
 
-        return mid;
+    // [9-1] 아이디 찾기 : 입력 이름+연락처 , 일치 시 아이디 반환
+    @GetMapping("/findid")
+    public Map<String , String> findId(@RequestParam Map<String, String> map){
+        return memberService.findId( map );
     }
 
-    // [10] 비밀번호 찾기
-    @PutMapping("/find")
-    public String findPwd(@RequestBody Map < String ,String > map ){
-        String result = memberService.findPwd( map );
-        return result;
+//    // [10] 비밀번호 찾기
+//    @PutMapping("/find")
+//    public String findPwd(@RequestBody Map < String ,String > map ){
+//        String result = memberService.findPwd( map );
+//        return result;
+//    }
+
+    // [10-1] 비밀번호 찾기
+    @GetMapping("/findpwd")
+    public Map<String,String> findPwd(@RequestParam Map < String ,String > map ){
+        return memberService.findPwd( map );
     }
 
 } // class end

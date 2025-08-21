@@ -12,7 +12,12 @@
     <jsp:include page="/header.jsp"></jsp:include>
 
     <div id="container">
-        <div id="map" style="width:100%;height:350px;"></div>
+        <div id="map" style="width:100%;height:450px;">
+
+        </div>
+        <div id="productDiv">
+
+        </div>
     </div>
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b594c9ba2d5a4fcb4a34dffa19dd7a11&libraries=clusterer"></script>

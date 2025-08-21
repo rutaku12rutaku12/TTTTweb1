@@ -20,7 +20,7 @@
         제품이미지 : <input type="file" multiple name="uploads" />
 
         판매위치(카카오지도API) : 
-        <div id="map" style="width:100%;height:350px;"></div>
+        <div id="map" style="width:100%;height:450px;"></div>
         <p><em>지도를 클릭해주세요!</em></p> 
         <div id="clickLatlng"></div>
 

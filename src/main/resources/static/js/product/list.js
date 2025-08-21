@@ -39,6 +39,33 @@ const getMap = async ()=>{
         kakao.maps.event.addListener( marker , 'click' , () =>{
             alert(`클릭한 제품은 : ${ product.pname } `);
         });
+
+
+        // *************** 업로드 된 이미지 출력 ****************
+        // 1. 어디에
+        const productDiv = document.querySelector('#productDiv');
+        // 2. 무엇을 , JSP(webapp이하), css/js/img등등(static이하) , java/string(controller)
+        let html ='';
+            // * 이미지가 없는 경우
+            if( product.images.length == 0 ){
+                html += `<img src="/upload/default.png" />`
+            }else{ // * 이미지 다수일때 반복문을 이용한 여러개 img 마크업 만들기
+                for( let i = 0 ; i < product.images.length; i++){
+                    let img = product.images[i];
+                    html += `<img src="http://localhost:8080/upload${img}" />`
+                    }
+            }
+        // 3. 출력
+        productDiv.innerHTML = html;
+        
+
+
+
+
+
+
+
+
         // 3-3 마커를 반환
         return marker;
     })

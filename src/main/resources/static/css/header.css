@@ -11,3 +11,5 @@ a{ text-decoration: none;}
 
 #header > #log-menu{display: flex;}
 #header > #log-menu > li{ margin-left: 10px;}
+
+#header > #sub-menu > li > a > img { width: 150px; height: 150px;}

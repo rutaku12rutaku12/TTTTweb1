@@ -65,7 +65,7 @@ const onCreate = async()=>{
     const data = await response.json();
     //
     if( data > 0 ){ alert('등록 성공'); }
-    else{alert('등록 실패'); }
+    else{alert('[등록 실패] 로그인 후 사용해주세요.'); }
 
 } // func end
 
