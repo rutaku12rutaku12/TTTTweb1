@@ -103,8 +103,8 @@ public class MemberService {
         // 3. 만약에 result 가 성공이면
         Map<String,String> resultMap = new HashMap<>();
         if( result == true ) {
-            resultMap.put( "msg" , mpwd );
-        } else{ resultMap.put("msg","회원정보없음"); }
+            resultMap.put( "msg" , "새로운 비밀번호는 "+mpwd+" 입니다." );
+        } else{ resultMap.put("msg","회원정보가 없습니다."); }
         // 4. 반환
         return resultMap;
     }

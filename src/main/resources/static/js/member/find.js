@@ -34,7 +34,8 @@ const findId = async() =>{ console.log('findId exe');
         console.log(response);
         const data = await response.json(); 
         console.log(data);
-        alert(data.msg)
+        if(data.msg != null ){alert(data.msg)}
+        else{alert('정보를 찾을 수 없습니다.')}
 
     }catch (error){console.log(error);}
 } // func end
@@ -61,19 +62,18 @@ const findId = async() =>{ console.log('findId exe');
 //   }catch (error){console.log(error);}
 // }
 
-// [2-1]
+// [2-1] 비밀번호 찾기 
 const findPwd = async() =>{ console.log('findPwd exe');  
 
     const mid = document.querySelector('.mid').value;
-    const mphone = document.querySelector('.mphone').value;
+    const mphone = document.querySelector('.mphone2').value;
     try{
         const option = { method : "GET" };
         const response = await fetch( `/member/findpwd?mid=${mid}&mphone=${mphone}` , option );
         console.log(response);
         const data = await response.json();
         console.log(data);
-        alert(`새 비밀번호는 ${data.msg}입니다.`);
-
+        alert(data.msg)
   }catch (error){console.log(error);}
 
 } // func end

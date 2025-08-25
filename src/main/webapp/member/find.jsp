@@ -19,7 +19,7 @@
         <br/>
         <h3> 비밀번호 찾기 </h3>
         <div> 아이디 : <input type="text" class = "mid"/></div>
-        <div> 연락처 : <input type="text" class = "mphone"/> </div> <br/>
+        <div> 연락처 : <input type="text" class = "mphone2"/> </div> <br/>
         <button type="button" onclick="findPwd()"> 비밀번호 찾기  </button>
     </div>
 
