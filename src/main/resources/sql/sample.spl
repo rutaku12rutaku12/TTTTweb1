@@ -59,6 +59,9 @@ INSERT INTO productimg (pimgname, pno) VALUES
 select * from member;
 select * from product;
 select * from productimg;
+select * from category;
+select * from post;
+select * from reply;
 
 
 
@@ -82,7 +85,7 @@ select * from category;
 create table post(
    pno         int auto_increment,
     ptitle       varchar(1000) not null ,
-    pcontent   longtext   not null ,
+    pcontent   longtext   not null , -- 4gb까지
     pdate       datetime default now() ,
     pview      int default 0 ,
     mno         int , -- 회원번호 fk

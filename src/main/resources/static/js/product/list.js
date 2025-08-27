@@ -38,7 +38,7 @@ const getMap = async ()=>{
         // 3-2 마커 클릭 이벤트 
         kakao.maps.event.addListener( marker , 'click' , () =>{
             alert(`클릭한 제품은 : ${ product.pname } `);
-        });
+     
 
 
         // *************** 업로드 된 이미지 출력 ****************
@@ -52,20 +52,12 @@ const getMap = async ()=>{
             }else{ // * 이미지 다수일때 반복문을 이용한 여러개 img 마크업 만들기
                 for( let i = 0 ; i < product.images.length; i++){
                     let img = product.images[i];
-                    html += `<img src="http://localhost:8080/upload${img}" />`
+                    html += `<img src="http://localhost:8080/upload/${img}" />`
                     }
             }
         // 3. 출력
         productDiv.innerHTML = html;
-        
-
-
-
-
-
-
-
-
+        });
         // 3-3 마커를 반환
         return marker;
     })
