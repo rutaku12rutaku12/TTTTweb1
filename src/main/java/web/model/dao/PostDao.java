@@ -7,7 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class PostDao extends Dao{
@@ -180,6 +182,51 @@ public class PostDao extends Dao{
             if( count == 1 ){return postDto.getPno();}
         }catch (Exception e){System.out.println(e);}
         return 0; // 실패
+    }
+
+    // [6] 댓글등록
+    public int writeReply( Map<String, String> reply ){
+        try{// 1. SQL 작성
+            String sql = "insert into reply ( rcontent , mno , pno ) values ( ? , ? , ? )";
+            // 2. SQL 기재
+            PreparedStatement ps = conn.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS); // PK값 반환 설정
+            // 3. SQL 매개변수 대입
+            ps.setString(1,reply.get("rcontent")); // { "속성명" : 속성값 , "속성명" : 속성값 }
+            ps.setString(2,reply.get("mno")); // map.get("속성명") : 속성값 반환
+            ps.setString(3,reply.get("pno"));
+            // 4. SQL 실행
+            int count = ps.executeUpdate();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            if( count == 1){
+                ResultSet rs = ps.getGeneratedKeys(); // insert 성공시 자동생성된 PK값 반환
+                if( rs.next() ) return rs.getInt( 1 ); // pk값 1개 반환
+            }
+        }catch (Exception e){System.out.println(e);}
+        return 0;
+    }
+    // [7] 댓글 전체 조회
+    public List< Map<String,String>> findAllReply( int pno ){
+        List <Map<String,String>> list = new ArrayList<>();
+        try{// 1. SQL 작성
+            String sql = "select * from reply r join member m on r.mno = m.mno where pno = ?";
+            // 2. SQL 기재
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3. SQL 매개변수 대입
+            ps.setInt(1,pno);
+            // 4. SQL 실행
+            ResultSet rs = ps.executeQuery();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            while ( rs.next() ){ // while -> 쿼리 값이 여러개일때 !
+                // { key: value , key : value , key : value }
+                Map<String,String> map = new HashMap<>();
+                map.put("rcontent",rs.getString("rcontent"));
+                map.put("rdate",rs.getString("rdate"));
+                map.put("rno",rs.getString("rno"));
+                map.put("mid",rs.getString("mid"));
+                list.add(map);
+            }
+        }catch (Exception e){System.out.println(e);}
+        return list;
     }
 } // class end
 

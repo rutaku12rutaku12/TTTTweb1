@@ -16,18 +16,18 @@ const findAll = async () => { console.log('findAll open');
     // 2-1 : try{ } catch(){}
     try{ // 2-1 : try{ }catch(){ } 예외처리
         // 2-2 fetch 이용한 게시물 요청
-        const url = `/post?cno${cno}&page=${page}&key=${key}&keyword=${keyword}`;
+        const url = `/post?cno=${cno}&page=${page}&key=${key}&keyword=${keyword}`;
         const response = await fetch (url) ; // GET 방식은 Option 생략가능
         const data = await response.json(); console.log(data); // data <--> pageDto
         // 2-3 fetch 결과를 테이블에 출력하기
-        const postBody = document.querySelector(".postBody");
+        const postBody = document.querySelector('.postBody');
         let html = ''; // fetch 로 부터 받은 데이터를 html 문자열로 반환
             data.data.forEach( ( post ) => { // data.data <--> pageDto( data )
                 // post <--> postDto{}
                 html += `
                  <tr>
                     <td> ${post.pno} </td>
-                    <td> ${post.ptitle} </td>
+                    <td> <a href="view.jsp?pno=${post.pno}">${post.ptitle} <a></td>
                     <td> ${post.mid} </td>
                     <td> ${post.pdate} </td>
                     <td> ${post.pview} </td>
