@@ -3,6 +3,7 @@ package web.model.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.model.dto.MemberDto;
+import web.model.dto.PointDto;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -41,6 +42,25 @@ public class MemberDao extends Dao{ // JDBC 연동 상속받기
         }catch (Exception e){System.out.println(e);}
         return 0; // 회원가입 실패시 0 반환한다.
     } // m end
+
+    // [1-1] 포인트
+    public int Point( PointDto pointDto ){
+        try{ String sql = "INSERT INTO pointlog (mno, plpoint, plcomment) VALUES (?, ?, ?);";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,pointDto.getMno());
+            ps.setInt(2,pointDto.getPlpoint());
+            ps.setString(3,pointDto.getPlcomment());
+
+            int count = ps.executeUpdate();
+
+            if( count == 1){
+
+
+            }
+
+
+        }catch (Exception e){System.out.println(e);}
+    }
 
     // [2] 로그인
     public int login(MemberDto memberDto){

@@ -5,7 +5,9 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import web.model.dto.MemberDto;
+import web.model.dto.PointDto;
 import web.service.MemberService;
+import web.service.PointService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.Map;
 public class MemberController {
 
     @Autowired private MemberService memberService;
+    @Autowired private PointService pointService;
 
     // [1] 회원가입
     @PostMapping("/signup")
@@ -24,6 +27,11 @@ public class MemberController {
         return result;
     }
 
+    // [1-1] 회원가입 시 포인트 증정
+    @PostMapping("/point")
+    public int Point(@RequestBody PointDto pointDto){
+        int result = pointService.signPoint(pointDto);
+    }
     // [2] 로그인
     @PostMapping("/login")
     public int login(@RequestBody MemberDto memberDto ,
