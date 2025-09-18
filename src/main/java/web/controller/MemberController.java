@@ -31,7 +31,9 @@ public class MemberController {
     @PostMapping("/point")
     public int Point(@RequestBody PointDto pointDto){
         int result = pointService.signPoint(pointDto);
+        return result;
     }
+
     // [2] 로그인
     @PostMapping("/login")
     public int login(@RequestBody MemberDto memberDto ,

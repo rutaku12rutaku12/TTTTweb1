@@ -12,4 +12,6 @@ public class PointDto {
     private int plpoint;
     private String plcomment;
     private String pldate;
+
+    private int totalPoint;
 }
