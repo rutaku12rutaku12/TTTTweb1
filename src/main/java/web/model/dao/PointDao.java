@@ -5,6 +5,7 @@ import web.model.dto.PointDto;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -33,10 +34,31 @@ public class PointDao extends Dao{
                 pointDto.setPlpoint(rs.getInt("plpoint"));
                 pointDto.setPlcomment(rs.getString("plcomment"));
                 pointDto.setPldate(rs.getString("pldate"));
+                List<PointDto> list = new ArrayList<>();
+                list.add(pointDto);
+                return list;
             }
         }catch (Exception e){
             System.out.println(e);
-        }
+        }return null;
+    }
+
+    // [3] 포인트 개별 합계 조회
+
+    public boolean printTotal( int mno ){
+        try{String sql = "select sum(plpoint) as totalpoint from pointlog where mno = ?;";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1,mno);
+            ResultSet rs = ps.executeQuery();
+            if( rs.next() ){
+                PointDto pointDto = new PointDto();
+                pointDto.setMno( rs.getInt("mno"));
+                pointDto.setPlpoint(rs.getInt("plpoint"));
+                return pointDto;
+            }
+
+
+        }catch (Exception e){System.out.println(e);}
     }
 
 }
